@@ -47,11 +47,11 @@ DAY = "Monday 23 November 2026"
 # ------------------------------------------------------------------ data
 LEADS = [
     dict(region="Europe", place="DYMER, KYIV REGION", topic="WAR",
-         tag="UKRAINE: 9 DEAD", fig="Boy, 7, saved", chip="Rescuers",
+         tag="UKRAINE: 11 DEAD", fig="Boy, 7, saved", chip="Rescuers",
          head="Russian strike brings down a block of flats near Kyiv",
-         body="Nine people are dead; a boy of seven was pulled alive from "
-              "the rubble hours after the attack.",
-         outlet="BBC, AP", lat=50.8, lon=30.3, scene="rubble"),
+         body="Eleven people are dead; a boy of seven was pulled out alive "
+              "after 14 hours under the rubble.",
+         outlet="BBC, Reuters", lat=50.8, lon=30.3, scene="rubble"),
     dict(region="Europe", place="ANTALYA, TURKEY", topic="CLIMATE",
          tag="COP31: NO DEAL", fig="+2 days", chip="Summit outcome",
          head="COP31 climate talks collapse with no deal",
@@ -68,12 +68,12 @@ LEADS = [
 
 CARDS = [
     dict(region="Asia-Pacific", place="CIKANDE, INDONESIA", tag="34 MISSING",
-         chip="Police", head="24 body bags taken from candy factory fire",
+         chip="Police", head="24 killed in Indonesian candy factory fire",
          body="Search for workers resumes.", outlet="Al Jazeera, AP",
          lat=-6.2, lon=106.3, scene="factory"),
     dict(region="Africa", place="BENGHAZI, LIBYA", tag="WARSHIP SUNK",
-         chip="Libyan officials", head="Russian warship sinks after drone attack",
-         body="Ukrainian sea drones suspected.", outlet="Guardian, AP",
+         chip="Zelenskyy confirms", head="Ukraine says it sank a Russian warship",
+         body="Sea drones hit it in Benghazi port.", outlet="AP, Reuters",
          lat=32.1, lon=20.1, scene="warship"),
     dict(region="Middle East", place="STRAIT OF HORMUZ", tag="TANKERS ABLAZE",
          chip="Iran navy claim", head="Iran says it set tankers on fire",
@@ -116,14 +116,14 @@ ALSO = [
     ("Americas", "US", "Trump hosts top holders of his meme coin", "Reuters"),
     ("Asia-Pacific", "Australia", "Molly Meldrum, Countdown host, dies at 83", "ABC"),
     ("Asia-Pacific", "Australia", "PBS medicines capped at $25 to 2030", "ABC"),
-    ("Asia-Pacific", "Indonesia", "MSCI talks to Prabowo on downgrade", "Reuters"),
+    ("Asia-Pacific", "Australia", "Jobless rate to top 5%, treasurer says", "Reuters"),
     ("Asia-Pacific", "India", "Tata Steel buys 26.4% of APL Apollo", "Reuters"),
-    ("Asia-Pacific", "Singapore", "One-off property tax rebates for 2027", "CNA"),
-    ("Asia-Pacific", "N. Korea", "Kim stresses 'sovereignty' in ties", "CNA"),
+    ("Americas", "US", "California sues OpenAI over model safety", "Reuters"),
+    ("Europe", "Armenia", "New constitution offered for peace", "Reuters"),
     ("Europe", "UK", "Co-op Live arena evacuated after tear gas", "BBC"),
     ("Europe", "UK", "NHS starts world's largest AI breast-scan trial", "BBC"),
     ("Europe", "UK", "Burnham to sell 'landmark' EU deal to MPs", "BBC"),
-    ("Europe", "UK", "Poundland has days to find a buyer", "BBC"),
+    ("Middle East", "Gaza", "Study finds a 'toxic wasteland'", "Guardian"),
     ("Europe", "Poland", "Russia twice tried to kill a Ukrainian rapper", "AP"),
     ("Europe", "Italy", "Jeweller Paolo Bulgari dies aged 89", "BBC"),
     ("Middle East", "Iran", "Unveils a twin-missile launcher", "ST"),
@@ -135,8 +135,8 @@ ALSO = [
 ]
 
 NUMBERS = [
-    ("9", "dead in the Dymer block"),
-    ("7", "age of the boy pulled out alive"),
+    ("11", "dead in the Dymer strike"),
+    ("14", "hours a boy, 7, lay trapped"),
     ("+2", "days COP31 ran past its end"),
     ("-5%", "KOSPI fall in Seoul"),
     ("34", "workers missing in Indonesia"),
@@ -652,7 +652,7 @@ def build():
         F("sansb", 10.5), WHITE, anchor="ra")
 
     put(d, (W / 2, 24), DAY, F("serif", 60), INK, anchor="ma")
-    put(d, (W / 2, 96), "Russian strike kills nine near Kyiv  ·  COP31 collapses with no deal  ·  "
+    put(d, (W / 2, 96), "Russian strike kills 11 near Kyiv  ·  COP31 collapses with no deal  ·  "
         "AI fears sink Asian stocks", F("serifi", 14.5), RED, anchor="ma")
     d.line(rect([M, 118, W - M, 118]), fill=INK, width=K)
 
@@ -742,7 +742,7 @@ def build():
     top = 908
     d.rectangle(rect([M, top, W - M, top + 54]), outline=RED, width=2 * K, fill=(252, 240, 236))
     put(d, (M + 8, top + 6), "DATE CHECK", F("sansb", 10.5), RED)
-    dc = ("Wires read up to 03:50 UTC, Monday 23 November 2026; every story here was reported or still developing "
+    dc = ("Wires read up to 08:05 UTC, Monday 23 November 2026; every story here was reported or still developing "
           "on 23 November in at least one time zone. Left out as other days' news: the Strathmore, California "
           "concert shooting (21 Nov), the UK-EU deal itself (agreed Friday 20 Nov) and weekend sport results.")
     block(d, M + 8, top + 20, dc, F("cond", 10), W - 2 * M - 16, 3, 11.5, INK)
