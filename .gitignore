@@ -1,0 +1,4 @@
+feeds/
+__pycache__/
+*.tar.gz
+out/
